@@ -1,5 +1,15 @@
-{
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite"
+// vercel.json
+{   
+  "build": {     
+    "src": "hellochakhill/package.json",     
+    "use": "@vercel/static-build",     
+    "config": {       
+      "buildCommand": "npm run build"     
+    }   
+  },   
+  "routes": [     
+    {       "src": "/(.*)",       
+      "dest": "/hellochakhill/$1"     
+    }   
+  ] 
 }
